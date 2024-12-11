@@ -3,6 +3,7 @@
 #include "MainMenuScreen.h"
 #include "Level.h"
 #include "Level01.h"
+#include "YouLoseScreen.h"
 
 GameplayScreen::GameplayScreen(const int levelIndex)
 	: m_levelIndex(levelIndex)
@@ -10,7 +11,7 @@ GameplayScreen::GameplayScreen(const int levelIndex)
 	SetTransitionInTime(1);
 	SetTransitionOutTime(3);
 
-	SetOnRemove([this](){ AddScreen(new MainMenuScreen()); });
+	SetOnRemove([this](){ AddScreen(new YouLoseScreen()); });
 
 	Show();
 }
