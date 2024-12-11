@@ -4,33 +4,29 @@
 
 using namespace KatanaEngine;
 
-/** @brief The main menu screen for the game. */
+//Connect the you lose screen back to the main menu
 class YouLoseScreen : public MenuScreen
 {
 
 public:
 
-	/** @brief Instantiate a main menu screen object. */
+	//Instantiate the lose screen
 	YouLoseScreen();
 	virtual ~YouLoseScreen() { }
 
-	/** @brief Load the content for the screen.
-		@param resourceManager A reference to the game's resource manager,
-		used for loading and managing game assets (resources). */
+	//Load the game and it's content
 	virtual void LoadContent(ResourceManager& resourceManager);
 	
-	/** @brief Unload the content for the screen. */
+	//Update the game screen
 	virtual void Update(const GameTime& gameTime);
 
-	/** @brief Render the screen.
-		@param spriteBatch A reference to the game's sprite batch, used for rendering. */
+	
 	virtual void Draw(SpriteBatch& spriteBatch);
 
-	/** @brief Set the flag to quit the game, so the game will exit when screen fades out. */
+	//Set the game and quit
 	virtual void SetQuittingGame() { m_isQuittingGame = true; }
 
-	/** @brief Check if the game is quitting.
-		@return True if the game is quitting. */
+	//Return to the game if the game is quitting
 	virtual bool IsQuittingGame() { return m_isQuittingGame; }
 
 

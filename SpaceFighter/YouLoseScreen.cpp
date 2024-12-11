@@ -16,11 +16,13 @@ YouLoseScreen::YouLoseScreen()
 
 void YouLoseScreen::LoadContent(ResourceManager& resourceManager)
 {
-	// Logo
+	//Display the "You Lose" image 
 	m_pTexture = resourceManager.Load<Texture>("Textures\\Youlose.png");
+	
+	//Center the screen
 	m_texturePosition = Game::GetScreenCenter() - Vector2::UNIT_Y * 150;
 
-	// Create the menu items
+	// Create the menu items and set the font 
 	const int COUNT = 2;
 	MenuItem *pItem;
 	Font::SetLoadSize(20, true);
@@ -28,6 +30,7 @@ void YouLoseScreen::LoadContent(ResourceManager& resourceManager)
 
 	SetDisplayCount(COUNT);
 
+	//Button to display Restart Game and Quit
 	enum Items { Restart_Game, QUIT };
 	std::string text[COUNT] = { "Restart", "Quit" };
 
@@ -42,11 +45,12 @@ void YouLoseScreen::LoadContent(ResourceManager& resourceManager)
 	}
 
 	GetMenuItem(Restart_Game)->SetOnSelect([this](){
+		//Move to the GameplayScreen - when game is restarted 
 		SetOnRemove([this](){ AddScreen(new GameplayScreen()); });
 		Exit();
 	});
 
-	// bind the Exit method to the quit menu item
+	//Connect the exit button 
 	GetMenuItem(QUIT)->SetOnSelect(std::bind(&YouLoseScreen::Exit, this));
 }
 
@@ -56,6 +60,7 @@ void YouLoseScreen::Update(const GameTime& gameTime)
 	float alpha = GetAlpha();
 	float offset = sinf(gameTime.GetTotalTime() * 10) * 5 + 5;
 
+	//Get the menu items and set the color 
 	for (MenuItem* pItem : GetMenuItems())
 	{
 		pItem->SetAlpha(alpha);
