@@ -28,8 +28,8 @@ void YouLoseScreen::LoadContent(ResourceManager& resourceManager)
 
 	SetDisplayCount(COUNT);
 
-	enum Items { START_GAME, QUIT };
-	std::string text[COUNT] = { "Start Game 2", "Quit" };
+	enum Items { Restart_Game, QUIT };
+	std::string text[COUNT] = { "Restart", "Quit" };
 
 	for (int i = 0; i < COUNT; i++)
 	{
@@ -41,9 +41,7 @@ void YouLoseScreen::LoadContent(ResourceManager& resourceManager)
 		AddMenuItem(pItem);
 	}
 
-	// when "Start Game" is selected, replace the "SetRemoveCallback" delegate
-	// so that it doesn't quit the game (originally set in the constructor)
-	GetMenuItem(START_GAME)->SetOnSelect([this](){
+	GetMenuItem(Restart_Game)->SetOnSelect([this](){
 		SetOnRemove([this](){ AddScreen(new GameplayScreen()); });
 		Exit();
 	});
