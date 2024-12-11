@@ -1,8 +1,6 @@
 
 #include "Ship.h"
 #include "Level.h"
-#include "YouLoseScreen.h"
-
 
 Ship::Ship()
 {
