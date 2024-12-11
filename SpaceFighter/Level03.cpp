@@ -1,16 +1,16 @@
 
 
-#include "Level02.h"
+#include "Level03.h"
 #include "BioEnemyShip.h"
 
 
-void Level02::LoadContent(ResourceManager& resourceManager)
+void Level03::LoadContent(ResourceManager& resourceManager)
 {
 	// Setup enemy ships
 	Texture* pTexture = resourceManager.Load<Texture>("Textures\\BioEnemyShip.png");
 
-	//Increased amount of enemies from level 1
-	const int COUNT = 23;
+	//Increased amount of enemies from level 2
+	const int COUNT = 25;
 
 	double xPositions[COUNT] =
 	{
@@ -46,7 +46,7 @@ void Level02::LoadContent(ResourceManager& resourceManager)
 	}
 
 	// Setup background
-	SetBackground(resourceManager.Load<Texture>("Textures\\SpaceBackground02.png"));
+	SetBackground(resourceManager.Load<Texture>("Textures\\SpaceBackground03.png"));
 
 	Level::LoadContent(resourceManager);
 }

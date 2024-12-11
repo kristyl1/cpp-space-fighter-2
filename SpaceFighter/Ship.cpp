@@ -26,9 +26,10 @@ void Ship::Hit(const float damage)
 
 	m_hitPoints -= damage;
 	if (m_hitPoints > 0) return;
-
+	
 	GameObject::Deactivate();
 	GetCurrentLevel()->SpawnExplosion(this);
+	
 }
 
 IAttachment* Ship::GetAttachment(const std::string& key)

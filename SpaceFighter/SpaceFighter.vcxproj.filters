@@ -104,6 +104,9 @@
     <ClCompile Include="YouLoseScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Level03.cpp">
+      <Filter>Source Files\Levels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainMenuScreen.h">
@@ -162,6 +165,9 @@
     </ClInclude>
     <ClInclude Include="YouLoseScreen.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level03.h">
+      <Filter>Source Files\Levels</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

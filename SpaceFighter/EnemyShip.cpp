@@ -43,4 +43,12 @@ void EnemyShip::Initialize(const Vector2 position, const double delaySeconds)
 void EnemyShip::Hit(const float damage)
 {
 	Ship::Hit(damage);
+
+	//Track number of enemy ships destroyed.
+	static int count = 0;
+	//Increments the counter and displays to console
+	count++;
+	std::cout << count << " ships destroyed.\n";
+	
 }
+

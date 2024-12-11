@@ -34,6 +34,8 @@ public:
 		@param damage The amount of damage to apply. */
 	virtual void Hit(const float damage);
 
+	//virtual void ShipCounter(const double count);
+
 	/** @brief Gets the string representation of the enemy ship.
 		@return Returns the string "Enemy Ship". */
 	virtual std::string ToString() const { return "Enemy Ship"; }
@@ -42,7 +44,7 @@ public:
 		@return Returns the collision type of the enemy ship. */
 	virtual CollisionType GetCollisionType() const { return CollisionType::Enemy | CollisionType::Ship; }
 
-
+	
 protected:
 
 	/** @brief Gets the delay before the enemy ship activates,
@@ -57,5 +59,5 @@ private:
 
 	double m_activationSeconds = 0;
 
-
+	
 };
