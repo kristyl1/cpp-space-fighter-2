@@ -189,6 +189,7 @@
     <ClCompile Include="SpaceFighter.cpp" />
     <ClCompile Include="TriggerType.cpp" />
     <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="YouLoseScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KatanaEngine\KatanaEngine.vcxproj">
@@ -214,6 +215,7 @@
     <ClInclude Include="SpaceFighter.h" />
     <ClInclude Include="TriggerType.h" />
     <ClInclude Include="Weapon.h" />
+    <ClInclude Include="YouLoseScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
